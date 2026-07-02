@@ -101,6 +101,7 @@ position = Vector2(169, 64)
 shape = SubResource("CircleShape2D_kh24r")
 
 [node name="Dialogue" parent="." instance=ExtResource("3_kh24r")]
+visible = false
 offset_left = -13.0
 offset_top = 177.0
 offset_right = 429.0
