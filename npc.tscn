@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1a0g2ayb7ig7"]
+
+[ext_resource type="Texture2D" uid="uid://dfcx8g3jmvses" path="res://assests/characters/Idle_Down.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://bwrwp0wqhdr6m" path="res://script/npc.gd" id="1_xxcha"]
+[ext_resource type="PackedScene" uid="uid://cvjcjv2d66f2i" path="res://dialog/control.tscn" id="3_kh24r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("1_ideak")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
+atlas = ExtResource("1_ideak")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6q4"]
+atlas = ExtResource("1_ideak")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcvl2"]
+atlas = ExtResource("1_ideak")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61ma"]
+atlas = ExtResource("1_ideak")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxoh"]
+atlas = ExtResource("1_ideak")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l64hl"]
+atlas = ExtResource("1_ideak")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_215dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul7y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcvl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l64hl")
+}],
+"loop": true,
+"name": &"npc_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ideak"]
+size = Vector2(13, 33.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh24r"]
+radius = 32.0
+
+[node name="npc" type="CharacterBody2D"]
+script = ExtResource("1_xxcha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(216.40001, 112.20001)
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_215dd")
+animation = &"npc_idle"
+autoplay = "npc_idle"
+frame_progress = 0.6874745
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(218.5, 115.75)
+shape = SubResource("RectangleShape2D_ideak")
+
+[node name="chat_det" type="Area2D" parent="."]
+visible = false
+position = Vector2(47, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_det"]
+visible = false
+position = Vector2(169, 64)
+shape = SubResource("CircleShape2D_kh24r")
+
+[node name="Dialogue" parent="." instance=ExtResource("3_kh24r")]
+offset_left = -13.0
+offset_top = 177.0
+offset_right = 429.0
+offset_bottom = 280.0
+
+[connection signal="body_entered" from="chat_det" to="." method="_on_chat_det_body_entered"]
+[connection signal="body_exited" from="chat_det" to="." method="_on_chat_det_body_exited"]
+[connection signal="child_entered_tree" from="chat_det/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]

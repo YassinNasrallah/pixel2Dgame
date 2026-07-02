@@ -1,0 +1,19 @@
+[
+  {Name:'Aren', Dialogue:'Hi Lina!'},
+  
+  {Name:'Lina', Dialogue:'Hi brother...'},
+  
+  {Name:'Aren', Dialogue:'Why do you look sad?'},
+  
+  {Name:'Lina', Dialogue:'We have no money left... we need to pay for food and the house.'},
+  
+  {Name:'Aren', Dialogue:'Dont worry, Lina. I will fix this.'},
+  
+  {Name:'Lina', Dialogue:'But the woods are dangerous... monsters live there!'},
+  
+  {Name:'Aren', Dialogue:'I heard there is a hidden treasure deep in the woods.'},
+  
+  {Name:'Lina', Dialogue:'Please be careful, brother...'},
+  
+  {Name:'Aren', Dialogue:'I promise. I will return with the treasure and protect you.'}
+]
