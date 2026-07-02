@@ -22,7 +22,6 @@ The game features interactive NPCs, enemy encounters, and a dialogue system powe
 - 👹 Enemy AI using Area2D detection
 - ⚔️ Enemy attack behavior
 - 🎵 Background music
-- 🏞️ Multiple game scenes
 - 🎨 Pixel art environment
 
 ---
@@ -54,6 +53,7 @@ project/
 
 ## 🚀 Planned Features
 
+- Multiple game scenes
 - Inventory System
 - Quest System
 - Save & Load
