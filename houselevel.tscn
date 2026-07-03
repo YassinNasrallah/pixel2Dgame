@@ -514,6 +514,8 @@ tile_map_data = PackedByteArray("AAATAAcAAAACAAAAAAATAAgAAAACAAEAAAATAAkAAAACAAI
 tile_set = SubResource("TileSet_pyc3u")
 use_kinematic_bodies = true
 
+[node name="PointLight2D" type="PointLight2D" parent="TileMapLayer/objects"]
+
 [node name="Player" parent="." instance=ExtResource("2_xt2y1")]
 position = Vector2(477, 330)
 
