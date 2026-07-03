@@ -21,6 +21,8 @@ The game features interactive NPCs, enemy encounters, and a dialogue system powe
 - 👤 NPC interaction
 - 👹 Enemy AI using Area2D detection
 - ⚔️ Enemy attack behavior
+- 🏠 House entry and exit system
+- 💡 Simple indoor lighting effects
 - 🎵 Background music
 - 🎨 Pixel art environment
 
