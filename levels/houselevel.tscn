@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=4 uid="uid://ei80orcovwdn"]
 
-[ext_resource type="Texture2D" uid="uid://3ctvec6hoval" path="res://assests/Tilesets/Dungeon_Tiles.png" id="1_ulgya"]
-[ext_resource type="Texture2D" uid="uid://c6xbjt73vtoov" path="res://assests/Structures/Buildings/Props.png" id="2_d08gs"]
-[ext_resource type="PackedScene" uid="uid://cdrxsisr5rta0" path="res://player.tscn" id="2_xt2y1"]
-[ext_resource type="Texture2D" uid="uid://cyoj1j5i4rnu8" path="res://assests/Structures/Stations/Furnace/Bricks_01-Sheet.png" id="3_0acj6"]
-[ext_resource type="Script" uid="uid://c7xcui7lm1u2p" path="res://inside.gd" id="4_5lu6y"]
+[ext_resource type="Texture2D" uid="uid://3ctvec6hoval" path="res://assests/Tilesets/Dungeon_Tiles.png" id="1_xcd8w"]
+[ext_resource type="Texture2D" uid="uid://c6xbjt73vtoov" path="res://assests/Structures/Buildings/Props.png" id="2_tmfpu"]
+[ext_resource type="Texture2D" uid="uid://cyoj1j5i4rnu8" path="res://assests/Structures/Stations/Furnace/Bricks_01-Sheet.png" id="3_u8nsu"]
+[ext_resource type="PackedScene" uid="uid://cdrxsisr5rta0" path="res://player.tscn" id="4_w1sdo"]
+[ext_resource type="Script" uid="uid://c7xcui7lm1u2p" path="res://script/inside.gd" id="5_kl25p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xt2y1"]
-texture = ExtResource("1_ulgya")
+texture = ExtResource("1_xcd8w")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -315,7 +315,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xt2y1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lu6y"]
-texture = ExtResource("2_d08gs")
+texture = ExtResource("2_tmfpu")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -458,7 +458,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5lu6y")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lktkt"]
-texture = ExtResource("3_0acj6")
+texture = ExtResource("3_u8nsu")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -529,11 +529,11 @@ use_kinematic_bodies = true
 position = Vector2(320, 152.66667)
 texture = SubResource("GradientTexture2D_lktkt")
 
-[node name="Player" parent="." instance=ExtResource("2_xt2y1")]
+[node name="Player" parent="." instance=ExtResource("4_w1sdo")]
 position = Vector2(480, 339)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("4_5lu6y")
+script = ExtResource("5_kl25p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(480, 388)
