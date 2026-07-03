@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ei80orcovwdn"]
+[gd_scene load_steps=15 format=4 uid="uid://ei80orcovwdn"]
 
 [ext_resource type="Texture2D" uid="uid://3ctvec6hoval" path="res://assests/Tilesets/Dungeon_Tiles.png" id="1_ulgya"]
 [ext_resource type="Texture2D" uid="uid://c6xbjt73vtoov" path="res://assests/Structures/Buildings/Props.png" id="2_d08gs"]
@@ -75,7 +75,7 @@ texture = ExtResource("1_ulgya")
 15:2/0 = 0
 16:2/0 = 0
 17:2/0 = 0
-17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.6871042, -8, -2.9676695, 2.7878094, 8, 3.1475277, -8, 8)
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.327386, 2.607952, 8, -8, 8, 8, -8, 3.507246)
 18:2/0 = 0
 18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.9676685, 8, 3.1475277, 8, 8, -8, 8)
 19:2/0 = 0
@@ -490,6 +490,17 @@ texture = ExtResource("3_0acj6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lktkt")
 
+[sub_resource type="Gradient" id="Gradient_0acj6"]
+offsets = PackedFloat32Array(0.54285717, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lktkt"]
+gradient = SubResource("Gradient_0acj6")
+width = 100
+height = 100
+fill = 2
+fill_from = Vector2(0.48366013, 0.45424837)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lu6y"]
 radius = 29.068884
 
@@ -515,15 +526,17 @@ tile_set = SubResource("TileSet_pyc3u")
 use_kinematic_bodies = true
 
 [node name="PointLight2D" type="PointLight2D" parent="TileMapLayer/objects"]
+position = Vector2(320, 152.66667)
+texture = SubResource("GradientTexture2D_lktkt")
 
 [node name="Player" parent="." instance=ExtResource("2_xt2y1")]
-position = Vector2(477, 330)
+position = Vector2(480, 339)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("4_5lu6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(480, 381)
+position = Vector2(480, 388)
 shape = SubResource("CircleShape2D_5lu6y")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
