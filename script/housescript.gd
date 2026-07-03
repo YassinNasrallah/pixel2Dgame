@@ -14,4 +14,4 @@ func _on_body_exited(body: PhysicsBody2D):
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene_to_file("res://houselevel.tscn")
+			get_tree().change_scene_to_file("res://levels/houselevel.tscn")
